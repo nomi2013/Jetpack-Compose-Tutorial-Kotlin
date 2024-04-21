@@ -38,6 +38,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.kotlincomposetutorial.AppScaffold
 import com.example.kotlincomposetutorial.R
 import com.example.kotlincomposetutorial.ui.theme.KotlinComposeTutorialTheme
 
@@ -51,7 +52,8 @@ class ImageActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting2("Android")
+                    AppScaffold("Image Component",
+                        content = {content("Android") }, activity = this)
                 }
             }
         }
@@ -59,7 +61,7 @@ class ImageActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting2(name: String, modifier: Modifier = Modifier) {
+fun content(name: String, modifier: Modifier = Modifier) {
 
     val context = LocalContext.current
     var buttonText by remember { mutableStateOf("Buttton") }
@@ -106,6 +108,6 @@ fun Greeting2(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview2() {
     KotlinComposeTutorialTheme {
-        Greeting2("Android")
+        content("Android")
     }
 }
