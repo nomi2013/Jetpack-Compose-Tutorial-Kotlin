@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">KotlinComposeTutorial</string>
     <string name="title_activity_button">ButtonActivity</string>
+    <string name="title_activity_image">ImageActivity</string>
 </resources>

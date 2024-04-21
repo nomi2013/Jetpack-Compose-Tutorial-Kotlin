@@ -30,6 +30,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.kotlincomposetutorial.ui.button.ButtonActivity
+import com.example.kotlincomposetutorial.ui.image.ImageActivity
 import com.example.kotlincomposetutorial.ui.theme.KotlinComposeTutorialTheme
 
 class MainActivity : ComponentActivity() {
@@ -60,7 +61,7 @@ fun ComposeComponents(components: List<String>, modifier: Modifier = Modifier) {
     ) {
        items(components){
            ComponentsRow(component = it, onClick = {
-               context.startActivity(Intent(context, ButtonActivity::class.java))
+               context.startActivity(Intent(context, ImageActivity::class.java))
            } )
            Divider(color = Color.Gray,
                thickness = 1.dp,
