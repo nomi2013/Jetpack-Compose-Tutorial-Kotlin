@@ -1,5 +1,6 @@
 package com.example.kotlincomposetutorial
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -28,6 +29,7 @@ import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.kotlincomposetutorial.ui.button.ButtonActivity
 import com.example.kotlincomposetutorial.ui.theme.KotlinComposeTutorialTheme
 
 class MainActivity : ComponentActivity() {
@@ -58,7 +60,7 @@ fun ComposeComponents(components: List<String>, modifier: Modifier = Modifier) {
     ) {
        items(components){
            ComponentsRow(component = it, onClick = {
-               Toast.makeText(context, "Clicked: ${it}", Toast.LENGTH_SHORT).show()
+               context.startActivity(Intent(context, ButtonActivity::class.java))
            } )
            Divider(color = Color.Gray,
                thickness = 1.dp,
